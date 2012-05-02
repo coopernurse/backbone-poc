@@ -6,7 +6,7 @@ First, [install Vagrant](http://vagrantup.com/)
     
 Then, from a shell:
     
-    mkdir backbone-poc
+    git clone git://github.com/coopernurse/backbone-poc.git
     cd backbone-poc
     vagrant box add base http://files.vagrantup.com/lucid32.box
     vagrant init

@@ -30,7 +30,7 @@ watch-phantom:
 	scripts/when-changed.py src/*.coffee test/*.coffee -c make phantom
 
 phantom: all
-	find htdocs/test -name "*_test.js" -printf "http://192.168.33.10:8080/qunit/%f\n" | xargs -L1 phantomjs scripts/phantom-qunit.js
+	find htdocs/js/build/test -name "*_test.js" -printf "http://192.168.33.10:8080/qunit/%f\n" | xargs -L1 phantomjs scripts/phantom-qunit.js
 	
 phantom-single: all
 	phantomjs scripts/phantom-qunit.js http://192.168.33.10:8080/qunit/$(TEST).js

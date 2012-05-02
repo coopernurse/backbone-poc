@@ -20,6 +20,12 @@ To stop the vm:
     
 Once you're logged in, use `make` to start/stop the dev server, and run tests:
 
+    # build all files
+    make all
+    
+    # clean all generated files
+    make clean
+
     # start / stop dev server
     #
     # server can be reached at: http://192.168.33.10:8080/

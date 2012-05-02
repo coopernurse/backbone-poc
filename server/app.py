@@ -33,7 +33,7 @@ JS_LIBS = """
 <script src="/static/js/underscore-min.js"></script>
 <script src="/static/js/backbone-min.js"></script>
 <script src="/static/js/barrister.browser.min.js"></script>
-<script src="/static/js/app-full.js"></script>
+<script src="/static/js/build/app-full.js"></script>
 """
 
 @post('/api/auth')
@@ -90,7 +90,7 @@ def index():
     
 @route('/qunit/:test')
 def qunit(test):
-    f = open("htdocs/test/%s" % test)
+    f = open("htdocs/js/build/test/%s" % test)
     test_code = f.read()
     f.close()
     return """
@@ -98,7 +98,7 @@ def qunit(test):
                         "http://www.w3.org/TR/html4/loose.dtd">
     <html>
     <head>
-      <link rel="stylesheet" href="/static/test/qunit-git.css" type="text/css" media="screen" />
+      <link rel="stylesheet" href="/static/js/qunit-git.css" type="text/css" media="screen" />
     </head>
     <body>
       <h1 id="qunit-header">QUnit example</h1>
@@ -108,8 +108,8 @@ def qunit(test):
      <ol id="qunit-tests"></ol>
      <div id="qunit-fixture">test markup, will be hidden</div>
      %s
-     <script type="text/javascript" src="/static/test/qunit-git.js"></script>
-     <script type="text/javascript" src="/static/test/testlib.js"></script>
+     <script type="text/javascript" src="/static/js/qunit-git.js"></script>
+     <script type="text/javascript" src="/static/js/build/test/testlib.js"></script>
      <script type="text/javascript">
        $(document).ready(function(){
           %s

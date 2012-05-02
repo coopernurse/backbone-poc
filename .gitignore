@@ -3,3 +3,4 @@ idl/*.json
 docs/
 *.pyc
 server/server.pid
+htdocs/js/build

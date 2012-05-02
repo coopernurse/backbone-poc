@@ -1,4 +1,6 @@
 
+# Generic test functions that should be scoped into all qunit tests
+
 # Similar to JUnit's setUp() or @Before
 QUnit.testStart (obj) ->
     stop()

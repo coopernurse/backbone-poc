@@ -1,12 +1,22 @@
 
-all:
-	coffee -j htdocs/js/app-full.js -lc src
-	uglifyjs -nc -o htdocs/js/app-full.min.js htdocs/js/app-full.js
-	coffee -o htdocs/test -bc test
+all: barrister js docco
+	
+clean:
+	rm -rf docs
+	rm -rf idl/*.json
+	rm -rf htdocs/js/build
+	
+js:
+	coffee -j htdocs/js/build/app-full.js -lc src
+	uglifyjs -nc -o htdocs/js/build/app-full.min.js htdocs/js/build/app-full.js
+	coffee -o htdocs/js/build/test -bc test
 
 barrister:
-	barrister -j idl/auth.json idl/auth.idl
+	barrister -d docs/auth.html -j idl/auth.json idl/auth.idl
 
+docco:
+	docco src/*.coffee
+		
 start:
 	python server/app.py & echo "$$!" > server/server.pid
 	
@@ -28,5 +38,3 @@ phantom-single: all
 watch-phantom-single:
 	scripts/when-changed.py src/*.coffee test/$(TEST).coffee -c make phantom-single
 	
-docco:
-	docco src/*.coffee

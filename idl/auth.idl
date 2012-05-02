@@ -1,0 +1,11 @@
+
+struct User {
+    username    string
+    firstName   string
+    lastName    string
+}
+
+interface AuthService {
+    login(username string, passwd string) User
+    updateUser(user User) bool
+}

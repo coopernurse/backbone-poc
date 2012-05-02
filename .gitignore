@@ -1,4 +1,5 @@
 .vagrant
 idl/*.json
 docs/
-
+*.pyc
+server/server.pid

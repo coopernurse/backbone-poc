@@ -9,7 +9,6 @@ Then, from a shell:
     git clone git://github.com/coopernurse/backbone-poc.git
     cd backbone-poc
     vagrant box add base http://files.vagrantup.com/lucid32.box
-    vagrant init
     vagrant up
     vagrant ssh
     cd /vagrant  (this will take you to the dir containing this README.md on the VM)
@@ -21,6 +20,7 @@ To stop the vm:
 Once you're logged in, use `make` to start/stop the dev server, and run tests:
 
     # build all files
+    mkdir docs
     make all
     
     # clean all generated files

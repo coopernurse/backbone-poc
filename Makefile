@@ -7,7 +7,7 @@ clean:
 	rm -rf htdocs/js/build
 	
 js:
-	coffee -j htdocs/js/build/app-full.js -lc src
+	coffee -j htdocs/js/build/app-full.js -c src
 	uglifyjs -nc -o htdocs/js/build/app-full.min.js htdocs/js/build/app-full.js
 	coffee -o htdocs/js/build/test -bc test
 
